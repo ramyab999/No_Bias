@@ -1,0 +1,20 @@
+# Node modules
+backend/nobias/node_modules/
+frontend/nobias/node_modules/
+
+# Environment files
+backend/nobias/.env
+frontend/nobias/.env
+.env
+.env.*
+
+# Build files
+frontend/nobias/build/
+backend/nobias/build/
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.DS_Store
