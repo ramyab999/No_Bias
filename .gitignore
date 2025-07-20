@@ -1,16 +1,16 @@
 # Node modules
-backend/node_modules/
-frontend/node_modules/
+backend/nobias/node_modules/
+frontend/nobias/node_modules/
 
 # Environment files
-backend/.env
-frontend/.env
+backend/nobias/.env
+frontend/nobias/.env
 .env
 .env.*
 
 # Build files
-frontend/build/
-backend/build/
+frontend/nobias/build/
+backend/nobias/build/
 
 # Logs
 *.log
