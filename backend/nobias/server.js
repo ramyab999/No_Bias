@@ -14,7 +14,7 @@ connectDB();
 // ✅ Initialize Express app
 const app = express();
 
-// ✅ Allowed CORS origins
+// ✅ Allowed CORS origins (including GitHub Pages)
 const allowedOrigins = [
   "http://localhost:3000",
   "http://127.0.0.1:3000",
@@ -24,6 +24,7 @@ const allowedOrigins = [
   "http://192.168.1.110:3000",
   "http://192.168.1.49:3000",
   "http://192.168.1.5:3000",
+  "https://ramyab999.github.io", // ✅ GitHub Pages URL
   undefined,
 ];
 
@@ -34,7 +35,7 @@ app.use(
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        console.error("Blocked by CORS:", origin);
+        console.error("❌ Blocked by CORS:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
@@ -57,20 +58,17 @@ const discriminationTypeRoutes = require("./routes/discriminationTypeRoutes");
 
 // ✅ API route usage
 app.use("/api/auth", authRoutes);
-app.use("/api/admin", adminRoutes); // includes /discrimination-types for admin
+app.use("/api/admin", adminRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/public", publicRoutes);
 app.use("/api/locations", locationRoutes);
-app.use("/api/admin/locations", locationRoutes); // if admin-specific location logic exists
-
-// ✅ Public discrimination types route (if needed outside admin)
+app.use("/api/admin/locations", locationRoutes);
 app.use("/api/discrimination-types", discriminationTypeRoutes);
 
 // ✅ Start server
 const PORT = process.env.PORT || 5000;
-const HOST = "127.0.0.1";
 
-app.listen(PORT, HOST, () => {
-  console.log(`✅ Server running at http://${HOST}:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });

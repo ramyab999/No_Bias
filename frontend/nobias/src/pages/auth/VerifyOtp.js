@@ -5,7 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const VerifyOtp = () => {
   const [otp, setOtp] = useState("");
-  const [showOtp, setShowOtp] = useState(false); // ✅ toggle state
+  const [showOtp, setShowOtp] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();

@@ -22,4 +22,4 @@ export const STATUS = {
   REJECTED: "Rejected",
 };
 
-export const DEFAULT_COUNTRY_ID = "default-country-id"; // Replace with real value
+export const DEFAULT_COUNTRY_ID = "default-country-id";
